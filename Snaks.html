@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .path a{
+            text-decoration: none;
+            list-style: none;
+            font-size: 20px;
+            color: gray;
+
+        }
+        .path nav{
+            margin-left: -20px;
+        }
+        .breadcrumb {
+            background-color: #f8f9fa;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            -o-object-fit: contain;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h5 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #036707;
+        }
+
+        .product-card p {
+            margin: 0;
+        }
+
+        .product-card .price {
+            color: #036707;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+
+
+            
+        }
+
+        .product-card .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9rem;
+            display: inline-block;
+            float: right;
+            gap: 20px;
+
+        }
+
+        .product-card .add-icon {
+            position: absolute;
+            top: -0.1rem;
+            right: -1rem;
+            background-color: #28a745;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1.5rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-lg ">
+        <div class="container-fluid">
+        <!-- <img src="img/img/logo.png" class="w-5 ms-3" alt="logo"> -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="nav navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll border border-top-0 border-end-0 border-start-0 border-2 border-color-green" style="--bs-scroll-height: 100px" >
+            <li class="nav-item dropdown">
+                <a
+                class="nav-link text-oily fs-7"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >
+                <i class="fa-solid fa-bars"></i> All categories
+                </a>
+                <ul class="dropdown-menu fs-7">
+                <li>
+                    <a class="dropdown-item text-green" href="Dairy , Eggs& Cheese.html"
+                    >Dairy , Eggs& Cheese</a
+                    >
+                </li>
+                <li>
+                    <a class="dropdown-item text-green" href="Fruits & Vegetables.html"
+                    >Fruits & Vegetables</a
+                    >
+                </li>
+                <li>
+                    <li>
+                        <a class="dropdown-item text-green" href="cleaning & Household.html"
+                        >cleaning & Household</a
+                        >
+                    </li>
+
+
+
+                    <a class="dropdown-item text-green" href="Meat & Poultry.html">Meat & Poultry</a>
+                </li>
+                <li><a class="dropdown-item text-green" href="Snaks.html">Snacks</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Dairy , Eggs& Cheese.html"
+                >Dairy , Eggs& Cheese</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Fruits & Vegetables.html"
+                >Fruits & Vegetables</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Meat & Poultry.html"
+                >Meat & Poultry</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Snaks.html"
+                >Snacks</a
+                >
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="cleaning and Household.html"
+                >cleaning and Household  </a
+                >
+            </li>
+
+
+
+            </ul>
+            <form class="d-flex shadow-btn rounded-5" role="search">
+            <input
+                class="form-control me-2 rounded-4 bg-transparent"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+            />
+            <button class="btn btn-outline-success rounded-5" type="submit">
+                Search
+            </button>
+            </form>
+            <div class="icons">
+
+            <ul class="list-unstyled d-flex ps-2 mt-2">
+            <div class="link">
+                <a href="#" class="nav-link">
+                <li><i class="ps-3 fs-4 text-oily fa-solid fa-user"></i></li
+                ></a>
+            </div>
+            <div class="link"><a href="#" class="nav-link">
+            <li><i class="ps-3 fs-4 text-oily fa-regular fa-heart"></i></li
+            ></a></div>
+            <div class="link">
+            <a href="#" class="nav-link"
+            ><li><i class="ps-3 pe-5 fs-4 text-oily fa-solid fa-cart-shopping"></i></li
+            ></a>
+            </div>
+
+            </ul>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <main class="container">
+        <div class="path">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home </a></li>
+                <li class="breadcrumb-item"><a href="Snaks.html">Snaks</a></li>
+            </ol>
+        </nav>
+
+    </div>
+
+        <h2 class="mb-4">Snaks</h2>
+        <div class="row">
+            <!-- Product Cards -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_1.png" alt="Product Image">
+                    <h5 class="txt">
+                        Kopiko Coffee Flavored Candy - 175 g
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            89.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_2.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Danisa Butter Cookies - 162 g
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            
+                            169.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_3.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Time Wafer Roll with Hazelnut Cream - 120 g
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            91.95 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_4.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Spuds Craft Cooked Lime Fusion Potato Chips, 45-55 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            10 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_4.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Paradise Ice Cream with Vanilla & Caramel - 850 m
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            121.95 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_5.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Nestle Mega Almond & Vanilla Ice Cream - 1 Piece
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            14.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_6.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Cadbury Cream Caramel Ice Cream - 600 ml
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            120.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_7.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        KitKat Ice Cream Cone - 110 m
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            25.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_8.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        KitKat Ice Cream Cone - 110 m
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            24.95 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_9.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Oreo Ice Cream Cup - 140 ml
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            24.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_10.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Cadbury Dairy Milk Ice Cream - 100 ml
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            24.95 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_11.jpg" alt="Product Image">
+                    <h5 class="txt">
+                       
+                        Cold Stone Mocha Pie Ice Cream - 150 ml
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            169.95 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_12.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Hawaii Vanilla & Almond Ice Cream - 900 ml
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            79.95 EGP
+
+                        </span>
+                        <span class="old-price">
+                            64.97 EGP
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_13.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        
+                        Mentos Fresh Action - 56 g
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            74.95 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_14.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Pocky Sticks with Strawberry - 45 g
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>130 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >150 EGP</small
+                            >
+                          </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_15.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Bonz Snacks with Vinegar and Lemon Flavor - 50 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                           
+                            5 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_15.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Bonz Snacks with Vinegar and Lemon Flavor - 50 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            9.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_16.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Freska Choco Bar with Halawa - 1 Piece
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            16.75 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_17.png" alt="Product Image">
+                    <h5 class="txt">
+                        Moro Ice Cream Stick - 65 ml
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            38.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_18.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Wonderville Chocolate & Cookies Ice Cream
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            19.95 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_19.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        
+                        Chill Out Cheese Flavored Peanuts - 135 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            445 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_20.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Big Chips Kettle Cooked Spiced Cheese Potato
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            445 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_21.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Twix Ice Cream - 137 g
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            99.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_22.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Bounty Ice Cream, 4 Pieces - 157 g
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            15.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_23.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Rawat Al Nakheel Mamool with Dates - 300 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            5 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_24.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Real Oat Snack Balls with Mac and Cheese Flavor - 50
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            224.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_25.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Mimix Dolce Coffee Candy - 1 Bag
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            258.75 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_26.jpg" alt="Product Image">
+                    <h5 class="txt">
+                       
+                        Storck Milky Caramel Bonbon - 325 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            30.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_27.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Storck Toffee Chocolate - 325 g
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>165 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >170 EGP</small
+                            >
+                          </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\SS\SS_28.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Hmto Skull Shaped Lollipop - 150 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            69.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="text-center my-4">
+            <button class="btn btn-outline-success">Load More</button>
+        </div>
+    </main>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 Market Delivary</p>
+            <a href="#">FAQs</a> | <a href="#">Contact Us</a> | <a href="#">About Us</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

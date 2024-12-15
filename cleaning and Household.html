@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .path a{
+            text-decoration: none;
+            list-style: none;
+            font-size: 20px;
+            color: gray;
+
+        }
+        .path nav{
+            margin-left: -20px;
+        }
+        .breadcrumb {
+            background-color: #f8f9fa;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            -o-object-fit: contain;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h5 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #036707;
+        }
+
+        .product-card p {
+            margin: 0;
+        }
+
+        .product-card .price {
+            color: #036707;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+
+
+            
+        }
+
+        .product-card .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9rem;
+            display: inline-block;
+            float: right;
+            gap: 20px;
+
+        }
+
+        .product-card .add-icon {
+            position: absolute;
+            top: -0.1rem;
+            right: -1rem;
+            background-color: #28a745;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1.5rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        .container{
+            margin-top: 100px;
+        }
+        .path a{
+            text-decoration: none;
+            list-style: none;
+            font-size: 20px;
+            color: gray;
+
+        }
+        .path nav{
+            margin-left: -20px;
+        }
+        .breadcrumb {
+            background-color: #f8f9fa;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            -o-object-fit: contain;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h5 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #036707;
+        }
+
+        .product-card p {
+            margin: 0;
+        }
+
+        .product-card .price {
+            color: #036707;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+
+
+            
+        }
+
+        .product-card .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9rem;
+            display: inline-block;
+            float: right;
+            gap: 20px;
+
+        }
+
+        .product-card .add-icon {
+            position: absolute;
+            top: -0.1rem;
+            right: -1rem;
+            background-color: #28a745;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1.5rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-lg ">
+        <div class="container-fluid">
+            <!--<img src="img/img/logo.png" class="w-5 ms-3  alt="logo"-->
+        <img src="" class="w-5 ms-3" alt="logo">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="nav navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll border border-top-0 border-end-0 border-start-0 border-2 border-color-green" style="--bs-scroll-height: 100px" >
+            <li class="nav-item dropdown">
+                <a
+                class="nav-link text-oily fs-7"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >
+                <i class="fa-solid fa-bars"></i> All categories
+                </a>
+                <ul class="dropdown-menu fs-7">
+                <li>
+                    <a class="dropdown-item text-green" href="Dairy , Eggs& Cheese.html"
+                    >Dairy , Eggs& Cheese</a
+                    >
+                </li>
+                <li>
+                    <a class="dropdown-item text-green" href="Fruits & Vegetables.html"
+                    >Fruits & Vegetables</a
+                    >
+                </li>
+                <li>
+                    <a class="dropdown-item text-green" href="cleaning & Household.html"
+                    >cleaning & Household</a
+                    >
+                </li>
+
+                <li>
+                    <a class="dropdown-item text-green" href="Meat & Poultry.html">Meat & Poultry</a>
+                </li>
+                <li><a class="dropdown-item text-green" href="Snaks.html">Snacks</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Dairy , Eggs& Cheese.html"
+                >Dairy , Eggs& Cheese</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Fruits & Vegetables.html"
+                >Fruits & Vegetables</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Meat & Poultry.html"
+                >Meat & Poultry</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Snaks.html"
+                >Snacks</a
+                >
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="cleaning and Household.html"
+                >cleaning and Household  </a
+                >
+            </li>
+
+
+
+            </ul>
+            <form class="d-flex shadow-btn rounded-5" role="search">
+            <input
+                class="form-control me-2 rounded-4 bg-transparent"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+            />
+            <button class="btn btn-outline-success rounded-5" type="submit">
+                Search
+            </button>
+            </form>
+            <div class="icons">
+
+            <ul class="list-unstyled d-flex ps-2 mt-2">
+            <div class="link">
+                <a href="#" class="nav-link">
+                <li><i class="ps-3 fs-4 text-oily fa-solid fa-user"></i></li
+                ></a>
+            </div>
+            <div class="link"><a href="#" class="nav-link">
+            <li><i class="ps-3 fs-4 text-oily fa-regular fa-heart"></i></li
+            ></a></div>
+            <div class="link">
+            <a href="#" class="nav-link"
+            ><li><i class="ps-3 pe-5 fs-4 text-oily fa-solid fa-cart-shopping"></i></li
+            ></a>
+            </div>
+
+            </ul>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <main class="container">
+        <div class="path">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home </a></li>
+                <li class="breadcrumb-item"><a href="Fruits & Vegetables.html">Fruits</a></li>
+                <li class="breadcrumb-item"><a href="FG.html">Vegetables</a></li>
+            </ol>
+        </nav>
+
+    </div>
+
+        <h2 class="mb-4">Fruits & Vegetables</h2>
+        <div class="row">
+            <!-- Product Cards -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_1.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Tide Automatic Powder Detergent, Original - 4.5 kg + Free 500 g 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            219.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_4.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Tide Automatic Powder Detergent, Lavender - 4.5 kg + Free 500 g 
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            139.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_6.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Persil Automatic Powder Detergent, Lavender - 2.5 kg + Persil Power Gel - 1 Liter
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            89.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_9.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Ariel Automatic Powder Detergent, Downy - 6 kg
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            13.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_11.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Ariel Automatic Clean & Fresh Gel Detergent - 2.5 Liter
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            94.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_13.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Oxi Automatic Gel Detergent, Lavender - 2.5 L
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            499.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_14.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Oxi Automatic Powder Detergent, Lavender - 4 + 2 kg
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            39.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_16.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Clorel Liquid Bleach For Front Load Washing Machines - 1050 ml
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            70 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_17.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Clorox Color Bleach, Regular - 750 ml
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            52.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_18.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Clorox Color Bleach, 950 ml - 2 Pieces + Clorox White Bleach - 950 ml
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            14.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_31.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Clorox Bleach, Lemon - 4 L
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            72.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_19.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Clorox White Bleach - 1 Liter + Clorox Color Bleach - 1 Liter + Clorox Multi-Purpose Cleaner - 1 Liter
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            14.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_20.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Velveta Luxury Concentrated Fabric Softener - 1 Liter
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>130 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >150 EGP</small
+                            >
+                          </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_21.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Velveta Elegance Concentrated Fabric Softener - 1 Liter
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            69.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_22.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Sweet Apples (0.5Kg)
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>130 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >150 EGP</small
+                            >
+                          </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/CH/CH_23.webp" alt="Product Image">
+                    <h5 class="txt">
+                        Adalia Lemon (0.25Kg)
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            8.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-lg ">
+            <div class="container-fluid">
+            <img src="" class="w-5 ms-3" alt="logo">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="nav navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll border border-top-0 border-end-0 border-start-0 border-2 border-color-green" style="--bs-scroll-height: 100px" >
+                <li class="nav-item dropdown">
+                    <a
+                    class="nav-link text-oily fs-7"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >
+                    <i class="fa-solid fa-bars"></i> All categories
+                    </a>
+                    <ul class="dropdown-menu fs-7">
+                    <li>
+                        <a class="dropdown-item text-green" href="Dairy , Eggs& Cheese.html"
+                        >Dairy , Eggs& Cheese</a
+                        >
+                    </li>
+                    <li>
+                        <a class="dropdown-item text-green" href="Fruits & Vegetables.html"
+                        >Fruits & Vegetables</a
+                        >
+                    </li>
+                    <li>
+                        <a class="dropdown-item text-green" href="Meat & Poultry.html">Meat & Poultry</a>
+                    </li>
+                    <li><a class="dropdown-item text-green" href="Snaks.html">Snacks</a></li>
+                    </ul>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link text-oily fs-7" aria-current="page" href="Dairy , Eggs& Cheese.html"
+                    >Dairy , Eggs& Cheese</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-oily fs-7" aria-current="page" href="Fruits & Vegetables.html"
+                    >Fruits & Vegetables</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-oily fs-7" aria-current="page" href="Meat & Poultry.html"
+                    >Meat & Poultry</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-oily fs-7" aria-current="page" href="Snaks.html"
+                    >Snacks</a
+                    >
+                </li>
+                </ul>
+                <form class="d-flex shadow-btn rounded-5" role="search">
+                <input
+                    class="form-control me-2 rounded-4 bg-transparent"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                />
+                <button class="btn btn-outline-success rounded-5" type="submit">
+                    Search
+                </button>
+                </form>
+                <div class="icons">
+    
+                <ul class="list-unstyled d-flex ps-2 mt-2">
+                <div class="link">
+                    <a href="#" class="nav-link">
+                    <li><i class="ps-3 fs-4 text-oily fa-solid fa-user"></i></li
+                    ></a>
+                </div>
+                <div class="link"><a href="#" class="nav-link">
+                <li><i class="ps-3 fs-4 text-oily fa-regular fa-heart"></i></li
+                ></a></div>
+                <div class="link">
+                <a href="#" class="nav-link"
+                ><li><i class="ps-3 pe-5 fs-4 text-oily fa-solid fa-cart-shopping"></i></li
+                ></a>
+                </div>
+    
+                </ul>
+            </div>
+            </div>
+            </div>
+        </nav>
+    
+    
+    
+        <main class="container">
+            <div class="path">
+    
+          
+    
+        </div>
+    
+            <div class="row">
+                <!-- Product Cards -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <p class="add-icon">+</p>
+                        <img src="img/img/CH/CH_24.webp" alt="Product Image">
+                        <h5 class="txt">
+                            Pico White Pearl Strawberry - 250 g
+    
+                        </h5>
+                        <p>
+                            <span class="price">
+                                219.95 EGP
+                            </span>
+    
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <p class="add-icon">+</p>
+                        <img src="img/img/CH/CH_25.webp" alt="Product Image">
+                        <h5 class="txt">
+                            Mzr3ty Egyptian Tomato - 500 g
+
+    
+                        </h5>
+                        <p>
+                            <span class="price">
+                                19.5 EGP
+
+    
+                            </span>
+    
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <p class="add-icon">+</p>
+                        <img src="img/img/CH/CH_26.webp" alt="Product Image">
+                        <h5 class="txt">
+                            Daltex Fresh Potato for Cooking - 3 kg
+
+                        </h5>
+                        <p>
+                            <span class="price">
+                                89.95 EGP
+    
+                            </span>
+    
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <p class="add-icon">+</p>
+                        <img src="img/img/CH/CH_27.webp" alt="Product Image">
+                        <h5 class="txt">
+                            Clementine (0.5Kg)
+    
+                        </h5>
+                        <p>
+                            <span class="price">
+                                13.47 EGP
+    
+                            </span>
+    
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <p class="add-icon">+</p>
+                        <img src="img/img/CH/CH_28.webp" alt="Product Image">
+                        <h5 class="txt">
+                            Green Life Fresh Dill - 100 g
+
+    
+                        </h5>
+                        <p>
+                            <span class="price">
+                                94.97 EGP
+    
+                            </span>
+    
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <p class="add-icon">+</p>
+                        <img src="img/img/CH/CH_29.webp" alt="Product Image">
+                        <h5 class="txt">
+                            Prepared Pineapple Honey Glow (1Kg)
+    
+                        </h5>
+                        <p>
+                            <span class="price">
+                                499.95 EGP
+    
+                            </span>
+    
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <p class="add-icon">+</p>
+                        <img src="img/img/CH/CH_30.webp" alt="Product Image">
+                        <h5 class="txt">
+                            Yellow Melon (AlMas) (1Kg)
+    
+                        </h5>
+                        <p>
+                            <span class="price">
+                                39.95 EGP
+    
+                            </span>
+    
+                        </p>
+                    </div>
+                </div>
+    
+               
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 Market Delivary</p>
+            <a href="#">FAQs</a> | <a href="#">Contact Us</a> | <a href="#">About Us</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

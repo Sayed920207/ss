@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .path a{
+            text-decoration: none;
+            list-style: none;
+            font-size: 20px;
+            color: gray;
+
+        }
+        .path nav{
+            margin-left: -20px;
+        }
+        .breadcrumb {
+            background-color: #f8f9fa;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            -o-object-fit: contain;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h5 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #036707;
+        }
+
+        .product-card p {
+            margin: 0;
+        }
+
+        .product-card .price {
+            color: #036707;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+
+
+            
+        }
+
+        .product-card .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9rem;
+            display: inline-block;
+            float: right;
+            gap: 20px;
+
+        }
+
+        .product-card .add-icon {
+            position: absolute;
+            top: -0.1rem;
+            right: -1rem;
+            background-color: #28a745;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1.5rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-lg ">
+        <div class="container-fluid">
+        <!-- <img src="img/img/logo.png" class="w-5 ms-3" alt="logo"> -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="nav navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll border border-top-0 border-end-0 border-start-0 border-2 border-color-green" style="--bs-scroll-height: 100px" >
+            <li class="nav-item dropdown">
+                <a
+                class="nav-link text-oily fs-7"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >
+                <i class="fa-solid fa-bars"></i> All categories
+                </a>
+                <ul class="dropdown-menu fs-7">
+                <li>
+                    <a class="dropdown-item text-green" href="Dairy , Eggs& Cheese.html"
+                    >Dairy , Eggs& Cheese</a
+                    >
+                </li>
+                <li>
+                    <a class="dropdown-item text-green" href="Fruits & Vegetables.html"
+                    >Fruits & Vegetables</a
+                    >
+                </li>
+
+
+                <li>
+                    <a class="dropdown-item text-green" href="cleaning & Household.html"
+                    >cleaning & Household</a
+                    >
+                </li>
+
+
+                <li>
+                    <a class="dropdown-item text-green" href="Meat & Poultry.html">Meat & Poultry</a>
+                </li>
+                <li><a class="dropdown-item text-green" href="Snaks.html">Snacks</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Dairy , Eggs& Cheese.html"
+                >Dairy , Eggs& Cheese</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Fruits & Vegetables.html"
+                >Fruits & Vegetables</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Meat & Poultry.html"
+                >Meat & Poultry</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Snaks.html"
+                >Snacks</a
+                >
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="cleaning and Household.html"
+                >cleaning and Household  </a
+                >
+            </li>
+
+
+
+
+            </ul>
+            <form class="d-flex shadow-btn rounded-5" role="search">
+            <input
+                class="form-control me-2 rounded-4 bg-transparent"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+            />
+            <button class="btn btn-outline-success rounded-5" type="submit">
+                Search
+            </button>
+            </form>
+            <div class="icons">
+
+            <ul class="list-unstyled d-flex ps-2 mt-2">
+            <div class="link">
+                <a href="#" class="nav-link">
+                <li><i class="ps-3 fs-4 text-oily fa-solid fa-user"></i></li
+                ></a>
+            </div>
+            <div class="link"><a href="#" class="nav-link">
+            <li><i class="ps-3 fs-4 text-oily fa-regular fa-heart"></i></li
+            ></a></div>
+            <div class="link">
+            <a href="#" class="nav-link"
+            ><li><i class="ps-3 pe-5 fs-4 text-oily fa-solid fa-cart-shopping"></i></li
+            ></a>
+            </div>
+
+            </ul>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <main class="container">
+        <div class="path">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home </a></li>
+                <li class="breadcrumb-item"><a href="Meat & Poultry.html">Meat & Poultry</a></li>
+            </ol>
+        </nav>
+
+    </div>
+
+        <h2 class="mb-4">Meat & Poultry</h2>
+        <div class="row">
+            <!-- Product Cards -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/MP/MP_1.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Beef Tenderloin Medallion (3Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            219.95 EGP
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/MP/MP_2.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Roast Beef (3Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            139.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/MP/MP_3.jpg" alt="Product Image">
+                    <h5 class="txt">
+                       Baladi Beef Kebab Halla (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            89.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_4.jpeg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Low Fat Beef Cubes (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            13.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_5.jpeg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Beef Cubes (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            94.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_6.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        
+                        Baladi Beef Entrecote Steak (0.5Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            499.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_7.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Seasoned Entrecote Steak (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            39.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_8.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Beef Escalopes (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            70 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_9.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Beef Shawerma Escalopes (0.5Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            52.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_10.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Beef Seasoned Shawerma (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            14.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_11.jpeg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Low Fat Minced Beef (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            72.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_12.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Minced Beef (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            14.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_13.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Oriental Sausage (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>130 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >150 EGP</small
+                            >
+                          </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_14.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Low Fat Beef Sausage (0.5Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            69.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_15.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        
+                        Low Fat Burger (0.5Kg) 
+
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            44.98 EGP
+                        </span>
+                        <span class="old-price">
+                            49.98 EGP
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_16.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Hawawshi - 1 Piece
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            8.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_17.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Mini Hawawshi (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            219.95 EGP
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_18.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Beef Heart & Kidney (0.5Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            139.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_19.jpeg" alt="Product Image">
+                    <h5 class="txt">
+                        Beef Tail (1Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            89.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_20.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Beef Toma Hawk Steak (0.5Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            13.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_21.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Kofta Beef Skewers (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            94.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_22.jpeg" alt="Product Image">
+                    <h5 class="txt">
+                        Chicken Breasts (0.125Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            499.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_23.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Fresh Roast Turkey (0.125Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            39.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_24.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Whole Chicken (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            70 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_25.jpeg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Chicken Shawerma (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            52.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_26.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Garlic Thyme Chicken Thighs (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            14.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_27.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Chicken Thighs (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            72.47 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_28.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Chicken Thigh with Lemon & Coriander (0.5Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            81.45 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_29.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Chicken Breasts with Eggs & Bread Crumbs (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>130 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >150 EGP</small
+                            >
+                          </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_30.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Half Chicken with Lemon & Coriander (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            69.97 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_31.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Tandoori Chicken (0.5Kg) 
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>135 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >150 EGP</small
+                            >
+                          </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_32.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Shish Tawook (0.5Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            99.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_33.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Yogurt & Herbs Shish Tawook (0.25Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            89.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_34.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Shish Tawook (0.25Kg) 
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            80.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_35.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Tandoori Chicken Breasts (0.25Kg) 
+
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_36.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Curry Chicken Breasts (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            86.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_37.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Marinated Chicken Breasts with Lemon & Coriander (0.5Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            87.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_38.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Honey Mustard Marinade Chicken Breasts (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            278.7 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_39.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Spicy Chicken Fajita (0.25Kg) 
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                          
+                            146.75 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_40.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Baladi Whole Chicken (1.2Kg) 
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            249.48 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_41.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Shahd Whole Chicken - 1000 - 1100 g
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            77.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_42.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Shahd Chicken Fillet - 1 kg
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            99.97 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_43.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Shahd Shish Tawook - 1 kg
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            269.95 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_44.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Adalia Lemon (0.25Kg)
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            78.55 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_45.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Adalia Lemon (0.25Kg)
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            69.6 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_46.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Adalia Lemon (0.25Kg)
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            8.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img\img\MP\MP_47.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Adalia Lemon (0.25Kg)
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            100.45 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="text-center my-4">
+            <button class="btn btn-outline-success">Load More</button>
+        </div>
+    </main>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 Market Delivary</p>
+            <a href="#">FAQs</a> | <a href="#">Contact Us</a> | <a href="#">About Us</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

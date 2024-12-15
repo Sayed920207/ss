@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+        .path a{
+            text-decoration: none;
+            list-style: none;
+            font-size: 20px;
+            color: gray;
+
+        }
+        .path nav{
+            margin-left: -20px;
+        }
+        .breadcrumb {
+            background-color: #f8f9fa;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            -o-object-fit: contain;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h5 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #036707;
+        }
+
+        .product-card p {
+            margin: 0;
+        }
+
+        .product-card .price {
+            color: #036707;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+
+
+            
+        }
+
+        .product-card .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9rem;
+            display: inline-block;
+            float: right;
+            gap: 20px;
+
+        }
+
+        .product-card .add-icon {
+            position: absolute;
+            top: -0.1rem;
+            right: -1rem;
+            background-color: #28a745;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1.5rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-lg ">
+        <div class="container-fluid">
+        <!-- <img src="img/img/logo.png" class="w-5 ms-3" alt="logo"> -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="nav navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll border border-top-0 border-end-0 border-start-0 border-2 border-color-green" style="--bs-scroll-height: 100px" >
+            <li class="nav-item dropdown">
+                <a
+                class="nav-link text-oily fs-7"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >
+                <i class="fa-solid fa-bars"></i> All categories
+                </a>
+                <ul class="dropdown-menu fs-7">
+                <li>
+                    <a class="dropdown-item text-green" href="Dairy , Eggs& Cheese.html"
+                    >Dairy , Eggs& Cheese</a
+                    >
+                </li>
+                <li>
+                    <a class="dropdown-item text-green" href="Fruits & Vegetables.html"
+                    >Fruits & Vegetables</a
+                    >
+                </li>
+                <li>
+                    <a class="dropdown-item text-green" href="cleaning & Household.html"
+                    >cleaning & Household</a
+                    >
+                </li>
+
+
+
+                <li>
+                    <a class="dropdown-item text-green" href="Meat & Poultry.html">Meat & Poultry</a>
+                </li>
+                <li><a class="dropdown-item text-green" href="Snaks.html">Snacks</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Dairy , Eggs& Cheese.html"
+                >Dairy , Eggs& Cheese</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Fruits & Vegetables.html"
+                >Fruits & Vegetables</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Meat & Poultry.html"
+                >Meat & Poultry</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="Snaks.html"
+                >Snacks</a
+                >
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link text-oily fs-7" aria-current="page" href="cleaning and Household.html"
+                >cleaning and Household  </a
+                >
+            </li>
+
+
+            </ul>
+            <form class="d-flex shadow-btn rounded-5" role="search">
+            <input
+                class="form-control me-2 rounded-4 bg-transparent"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+            />
+            <button class="btn btn-outline-success rounded-5" type="submit">
+                Search
+            </button>
+            </form>
+            <div class="icons">
+
+            <ul class="list-unstyled d-flex ps-2 mt-2">
+            <div class="link">
+                <a href="#" class="nav-link">
+                <li><i class="ps-3 fs-4 text-oily fa-solid fa-user"></i></li
+                ></a>
+            </div>
+            <div class="link"><a href="#" class="nav-link">
+            <li><i class="ps-3 fs-4 text-oily fa-regular fa-heart"></i></li
+            ></a></div>
+            <div class="link">
+            <a href="#" class="nav-link"
+            ><li><i class="ps-3 pe-5 fs-4 text-oily fa-solid fa-cart-shopping"></i></li
+            ></a>
+            </div>
+
+            </ul>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <main class="container">
+        <div class="path">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home </a></li>
+                <li class="breadcrumb-item"><a href="Dairy , Eggs& Cheese.html">Dairy , Eggs& Cheese</a></li>
+            </ol>
+        </nav>
+
+    </div>
+
+        <h2 class="mb-4">Dairy , Eggs& Cheese</h2>
+        <div class="row">
+            <!-- Product Cards -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_2.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Avanti Istanbuli Cheese - 450 g
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>130 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >150 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_3.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Cheese with Pickled Olives Flavor - 500 g
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>137.44 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >165 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_4.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Plus Cheese with Smoked Roumy Cheese Flavor - 250 g
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>199.5 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >165 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_5.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Plus Cheese with Pickled Lemon Flavor - 500 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            65.25 EGP
+
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_5.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Plus Cheese with Pickled Lemon Flavor - 250 g
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>125 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >141 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_6.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Plus Cheese with Pickled Lemon Flavor - 250 g
+
+
+                    </h5>
+                    <div class="price d-flex text-black  justify-content-between">
+                        <b>23 EGP</b>
+                        <small class="mt-2 text-decoration-line-through">33 GPP</small>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_7.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Feta Cheese - 450 g
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            36.95 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_8.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Juhayna Caramel Pudding, 100 g - 4 Pieces
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            36.95 EGP
+
+
+
+                        </span>
+
+                    </p>
+    
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_9.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Juhayna Chocolate Pudding, 100 g - 4 Pieces
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>122 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >163.44 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_10.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Feta Cheese - 450 g
+
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>142 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >131 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_11.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Light Feta Cheese - 450 g
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>63.55 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >100 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_12.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Istanbouli Cheese - 450 g
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>90.55 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >110 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_13.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Gold Lite Feta Cheese - 500 g
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>130 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >150 EGP</small
+                            >
+                          </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_14.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Gold Feta Cheese - 500 g
+
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>177 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >200 EGP</small
+                            >
+                          </div>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_15.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Gold Lite Feta Cheese - 500 g
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            94 EGP
+
+                        </span>
+                        <span class="old-price">
+                            49.98 EGP
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_16.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Domty Gold Feta Cheese - 500 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            375 EGP
+
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_17.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Royal Dutch Emmental Cheese (0.125Kg)
+
+                    </h5>
+                    <p>
+                        <div class="price d-flex justify-content-between">
+                            <b>130 EGP</b>
+                            <small class="mt-2 text-decoration-line-through"
+                              >140 EGP</small
+                            >
+                          </div>
+
+
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_18.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Dina Farms Cheese with Cream - 275 g
+
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            8.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <p class="add-icon">+</p>
+                    <img src="img/img/DEC/DEC_19.jpg" alt="Product Image">
+                    <h5 class="txt">
+                        Blue River Cheddar Cheese Slices - 48 Pieces
+
+                    </h5>
+                    <p>
+                        <span class="price">
+                            8.69 EGP
+
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="text-center my-4">
+            <button class="btn btn-outline-success">Load More</button>
+        </div>
+    </main>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 Market Delivary</p>
+            <a href="#">FAQs</a> | <a href="#">Contact Us</a> | <a href="#">About Us</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
